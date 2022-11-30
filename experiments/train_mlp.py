@@ -30,6 +30,10 @@ parser.add_argument('-l', '--learning-rate',
                 help='The learning rate. That is, a scalar that determines the size of the steps taken by the '
                      'gradient descent algorithm. 0.1 works well for synth, 0.0001 works well for MNIST.',
                 default=0.01, type=float)
+parser.add_argument('-a', '--activation',
+                dest='activation',
+                help ="The activation function, choose between Sigmoid and ReLu",
+                default='sigmoid', type=str)
 
 args = parser.parse_args()
 
@@ -40,6 +44,13 @@ elif args.data == 'mnist':
     (xtrain, ytrain), (xval, yval), num_classes = vg.load_mnist(final=False, flatten=True)
 else:
     raise Exception(f'Dataset {args.data} not recognized.')
+
+## Set the activation function for the hidden layer.
+if args.activation.lower() == 'relu':
+    print('Using ReLu')
+    activation_function = vg.relu
+else:
+    activation_function = vg.sigmoid
 
 print(f'## loaded data:')
 print(f'         number of instances: {xtrain.shape[0]} in training, {xval.shape[0]} in validation')
@@ -80,10 +91,13 @@ class MLP(vg.Module):
         # first layer
         hidden = self.layer1(input)
 
-        # non-linearity
-        hidden = vg.sigmoid(hidden)
-        # -- We've called a utility function here, to mimin how this is usually done in pytorch. We could also do:
-        #    hidden = Sigmoid.do_forward(hidden)
+        # # non-linearity
+        # hidden = vg.sigmoid(hidden)
+        # # -- We've called a utility function here, to mimin how this is usually done in pytorch. We could also do:
+        # #    hidden = Sigmoid.do_forward(hidden)
+
+        # Added keyword parameter for sigmoid or relu function
+        hidden = activation_function(hidden)
 
         # second layer
         output = self.layer2(hidden)

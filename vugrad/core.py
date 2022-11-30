@@ -24,7 +24,6 @@ class TensorNode:
         self.name = name
         self.value = value   # the raw value that this node holds
         self.source = source # the OpNode that produced this Node
-
         self.grad = np.zeros(shape=value.shape) # This is where we will put the gradient when we compute the loss
 
         # -- The gradient is defined as a tensor with the same dimensions as the value. At element `index` it contains
