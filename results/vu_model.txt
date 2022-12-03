@@ -1,0 +1,60 @@
+epoch 000
+       accuracy: 0.1026
+   running loss: 0.4
+epoch 001
+       accuracy: 0.948
+   running loss: 0.2125
+epoch 002
+       accuracy: 0.9602
+   running loss: 0.1617
+epoch 003
+       accuracy: 0.9644
+   running loss: 0.1283
+epoch 004
+       accuracy: 0.9674
+   running loss: 0.1042
+epoch 005
+       accuracy: 0.9674
+   running loss: 0.0861
+epoch 006
+       accuracy: 0.9688
+   running loss: 0.07153
+epoch 007
+       accuracy: 0.9696
+   running loss: 0.06055
+epoch 008
+       accuracy: 0.9704
+   running loss: 0.05172
+epoch 009
+       accuracy: 0.9718
+   running loss: 0.04486
+epoch 010
+       accuracy: 0.9716
+   running loss: 0.03929
+epoch 011
+       accuracy: 0.9722
+   running loss: 0.03477
+epoch 012
+       accuracy: 0.9724
+   running loss: 0.03124
+epoch 013
+       accuracy: 0.9726
+   running loss: 0.0282
+epoch 014
+       accuracy: 0.9726
+   running loss: 0.02557
+epoch 015
+       accuracy: 0.9728
+   running loss: 0.02346
+epoch 016
+       accuracy: 0.9734
+   running loss: 0.02164
+epoch 017
+       accuracy: 0.9738
+   running loss: 0.02008
+epoch 018
+       accuracy: 0.9736
+   running loss: 0.01867
+epoch 019
+       accuracy: 0.974
+   running loss: 0.01746
